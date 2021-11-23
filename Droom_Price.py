@@ -172,10 +172,10 @@ xgb=xgboost.XGBRegressor(base_score=0.25, booster='gbtree', colsample_bylevel=1,
              silent=None, subsample=1, verbosity=1)
 xgb.fit(X,Y)
 
-prediction = xgb.predict(values)
-prediction=np.exp(prediction)
+#prediction =np.exp(xgb.predict(values))[0]
+#prediction=np.exp(prediction)
 
 st.subheader('Prediction')
-st.write("Price: Rs.",prediction[0])
+st.write("Price: Rs.",np.exp(xgb.predict(values))[0])
 #st.write(prediction)
     
